@@ -13,6 +13,11 @@ bool isEmpty() {
     if (ind > 0) return false;
             else return true;
 }
+void pop()
+{
+    stack[ind]=0;
+    --ind;
+}
 
 bool verify (char input[]) {
     ind = 0;
@@ -28,8 +33,7 @@ bool verify (char input[]) {
             // than the one we are closic, then the input is wrong
             if (isEmpty() || Stack[ind] != 1) return false;
             else {
-                Stack[ind] = 0;
-                --ind;
+                pop();
             }
         }
         if (input[i] == ']') {
@@ -37,8 +41,7 @@ bool verify (char input[]) {
             // than the one we are closic, then the input is wrong
             if (isEmpty() || Stack[ind] != 2) return false;
             else {
-                Stack[ind] = 0;
-                --ind;
+                pop();
             }
         }
         if (input[i] == '}') {
@@ -46,8 +49,7 @@ bool verify (char input[]) {
             // than the one we are closic, then the input is wrong
             if (isEmpty() || Stack[ind] != 3) return false;
             else {
-                Stack[ind] = 0;
-                --ind;
+               pop();
             }
         }
     }
